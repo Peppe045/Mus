@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monochrome Web Player</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.12/shaka-player.ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.12/controls.css">
+</head>
+<body>
+    <input type="text" id="searchBox" placeholder="Cerca brani o artisti...">
+    <button onclick="search()">Cerca</button>
+    <div id="results"></div>
+
+    <!-- Player per FLAC diretto (base/alta qualità) -->
+    <audio id="simpleAudioPlayer" controls style="display:none;"></audio>
+
+    <!-- Contenitore per lo stream DASH/Hi-Res (Shaka Player) -->
+    <div id="dashVideoContainer" style="display:none;">
+        <video id="dashVideoPlayer" width="600" controls autoplay></video>
+    </div>
+
+    <!-- Pulsante nascosto per download FLAC -->
+    <a id="flacDownloadLink" style="display:none;"></a>
+
+    <script src="player.js"></script>
+</body>
+</html>
